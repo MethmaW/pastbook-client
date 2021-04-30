@@ -1,0 +1,22 @@
+.createGridDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 4%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.createGridDiv Button {
+  font-size: 20px !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 3% 0;
+}
+/*# sourceMappingURL=createGridBtn.css.map */

@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,aAAa,CAAC;EACb,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,SAAS;CACjB",
     "sources": [
-        "components.scss"
+        "selectedHeader.scss"
     ],
     "names": [],
-    "file": "components.css"
+    "file": "selectedHeader.css"
 }

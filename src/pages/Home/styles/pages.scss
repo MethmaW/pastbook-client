@@ -1,4 +1,8 @@
 $imgWidthHeight: 300px;
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+}
 
 #div1,
 #div2,
@@ -13,8 +17,7 @@ $imgWidthHeight: 300px;
 }
 
 .cardParentDiv {
-	display: flex;
-	justify-content: center;
+	@include flexCenter();
 	position: relative;
 }
 

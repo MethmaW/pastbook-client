@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Spin } from "antd";
-import { CheckOutlined, LoadingOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Button } from "antd";
+import { CheckOutlined, PlusOutlined } from "@ant-design/icons";
 import * as ExternalAPIs from "../../utils/api/externalAPIs";
 import * as GlobalMethods from "../../utils/helper/globalMethods";
-import { SelectHeader, Spinner } from "../../rootImports";
+import { SelectHeader, Spinner, CreateGridBtn } from "../../rootImports";
 import "./styles/pages.css";
 
 const Home = () => {
@@ -47,6 +47,11 @@ const Home = () => {
 				{showSpin && <Spinner text='Loading images' />}
 
 				<SelectHeader text='Select 9 photos from uploaded photos to create a photo grid!' />
+
+				{selectedPhotosArr.length >= 9 && (
+					<CreateGridBtn text='Create a photo grid' />
+				)}
+
 				<Row>
 					{uploadedPhotos.map((photo) => {
 						return (
