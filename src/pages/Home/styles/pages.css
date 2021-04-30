@@ -1,0 +1,43 @@
+#div1,
+#div2,
+#div3,
+#div4 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.cardParentDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.photoSelectedTick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tick {
+  font-size: 3rem;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+}
+
+.image:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=pages.css.map */

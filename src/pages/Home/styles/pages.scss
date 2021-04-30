@@ -1,0 +1,37 @@
+$imgWidthHeight: 300px;
+
+#div1,
+#div2,
+#div3,
+#div4 {
+	float: left;
+	width: 100px;
+	height: 35px;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.cardParentDiv {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.photoSelectedTick {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.tick {
+	font-size: 3rem;
+}
+
+.image {
+	width: $imgWidthHeight;
+	height: $imgWidthHeight;
+	&:hover {
+		cursor: pointer;
+	}
+}
