@@ -6,6 +6,7 @@ import rootReducer from "./reducers";
 
 import App from "./App";
 import "antd/dist/antd.css";
+import "./index.css";
 
 const store = createStore(
 	rootReducer,

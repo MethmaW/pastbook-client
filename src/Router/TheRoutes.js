@@ -6,21 +6,20 @@ import {
 	Switch,
 	BrowserRouter as Router,
 } from "react-router-dom";
-import paths from "./paths";
+import publicPaths from "./publicPaths";
+import privatePaths from "./privatePaths";
+import ProtectedRoute from "./ProtectedRoute";
+import { LoadingOutlined } from "@ant-design/icons";
 
 const TheRoutes = () => {
-	const loading = (
-		<div className='pt-3 text-center'>
-			<div className='sk-spinner sk-spinner-pulse'></div>
-		</div>
-	);
+	const loading = <LoadingOutlined />;
 	return (
 		<>
 			<HashRouter>
 				<Suspense fallback={loading}>
 					<Router>
 						<Switch>
-							{paths.map((route, i) => {
+							{publicPaths.map((route, i) => {
 								return (
 									route.component && (
 										<Route
@@ -33,6 +32,18 @@ const TheRoutes = () => {
 									)
 								);
 							})}
+
+							{privatePaths.map((route, i) => {
+								return (
+									<ProtectedRoute
+										path={route.path}
+										exact={route.exact}
+										component={route.component}
+										isAuth={true}
+									/>
+								);
+							})}
+
 							<Redirect from='/' to='/home' />
 						</Switch>
 					</Router>
