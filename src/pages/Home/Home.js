@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card } from "antd";
-import { CheckOutlined } from "@ant-design/icons";
+import { Row, Col, Card, Spin } from "antd";
+import { CheckOutlined, LoadingOutlined } from "@ant-design/icons";
 import * as ExternalAPIs from "../../utils/api/externalAPIs";
+import * as GlobalMethods from "../../utils/helper/globalMethods";
+import { SelectHeader, Spinner } from "../../rootImports";
 import "./styles/pages.css";
 
 const Home = () => {
 	//states
 	const [uploadedPhotos, setUploadedPhotos] = useState([]);
 	const [selectedPhotosArr, setSelectedPhotosArr] = useState([]);
+	const [showSpin, setShowSpin] = useState(true);
 
 	//useEffect calls
 	useEffect(() => {
@@ -19,6 +22,16 @@ const Home = () => {
 	//methods
 	const handleImageClick = (id) => {
 		console.log(id);
+
+		if (selectedPhotosArr.length >= 9) {
+			return selectedPhotosArr.includes(id)
+				? setSelectedPhotosArr(selectedPhotosArr.filter((item) => item !== id))
+				: GlobalMethods.showNotification(
+						"warning",
+						"Please select no more than 9 photos"
+				  );
+		}
+
 		selectedPhotosArr.includes(id)
 			? setSelectedPhotosArr(selectedPhotosArr.filter((item) => item !== id))
 			: setSelectedPhotosArr((prevState) => [...prevState, id]);
@@ -30,7 +43,10 @@ const Home = () => {
 
 	return (
 		<>
-			<div className='site-card-wrapper'>
+			<div>
+				{showSpin && <Spinner text='Loading images' />}
+
+				<SelectHeader text='Select 9 photos from uploaded photos to create a photo grid!' />
 				<Row>
 					{uploadedPhotos.map((photo) => {
 						return (
@@ -49,6 +65,7 @@ const Home = () => {
 												}
 												alt={photo.timestamp}
 												title={photo.timestamp}
+												onLoad={() => setShowSpin(false)}
 												src={photo.picture}
 												className='image'
 											/>

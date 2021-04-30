@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const Selection = () => {
 	function allowDrop(ev) {
@@ -49,4 +50,4 @@ const Selection = () => {
 	);
 };
 
-export default Selection;
+export default withRouter(Selection);
