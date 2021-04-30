@@ -1,11 +1,14 @@
 import React from "react";
+import TheRoutes from "./Router/TheRoutes";
+
 import "./App.css";
 
-//import components
-import { Home } from "./rootImports";
-
 const App = () => {
-	return <Home />;
+	return (
+		<>
+			<TheRoutes />
+		</>
+	);
 };
 
 export default App;
