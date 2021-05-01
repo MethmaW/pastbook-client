@@ -7,6 +7,8 @@ import { CheckOutlined } from "@ant-design/icons";
 import "./styles/home.css";
 
 const Home = () => {
+	//varaiables
+
 	//states
 	const [uploadedPhotos, setUploadedPhotos] = useState([]);
 	const [selectedPhotosArr, setSelectedPhotosArr] = useState([]);
@@ -17,11 +19,9 @@ const Home = () => {
 		ExternalAPIs.getUploadedPhotos().then((res) => setUploadedPhotos(res));
 	}, []);
 
-	//varaiables
-
-	//methods
+	//methods and statements
 	const handleImageClick = (id) => {
-		console.log(id);
+		console.log("Home - clickedPhotoId", id);
 
 		if (selectedPhotosArr.length >= 9) {
 			return selectedPhotosArr.includes(id)
@@ -38,8 +38,8 @@ const Home = () => {
 	};
 
 	//global logs
-	console.log("uploadedPhotos", uploadedPhotos);
-	console.log("selectedPhotosArr", selectedPhotosArr);
+	console.log("Home - uploadedPhotos", uploadedPhotos);
+	console.log("Home - selectedPhotosArr", selectedPhotosArr);
 
 	return (
 		<>
