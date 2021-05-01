@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { showOrder } from "../../actions/index";
+import { showOrder, isAuth } from "../../actions/index";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
@@ -9,7 +9,7 @@ import "./styles/createGridBtn.css";
 const CreateGridBtn = ({ text, photos, to }) => {
 	const dispatch = useDispatch();
 	const handleSelectionUpload = () => {
-		alert("bah");
+		dispatch(isAuth(true));
 		dispatch(showOrder(photos));
 	};
 

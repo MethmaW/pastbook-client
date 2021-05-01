@@ -1,11 +1,17 @@
-import { Selection } from "../rootImports";
+import { Grid, Order } from "../rootImports";
 
 const privatePaths = [
 	{
-		path: "/Selection",
+		path: "/photo-grid",
 		exact: true,
-		name: "Selection",
-		component: Selection,
+		name: "Grid",
+		component: Grid,
+	},
+	{
+		path: "/order-photos",
+		exact: true,
+		name: "Order",
+		component: Order,
 	},
 ];
 

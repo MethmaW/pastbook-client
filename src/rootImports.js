@@ -1,6 +1,7 @@
 //pages
 export { default as Home } from "./pages/Home/Home";
-export { default as Selection } from "./pages/Selection";
+export { default as Order } from "./pages/Order/Order";
+export { default as Grid } from "./pages/Grid/Grid";
 
 //components
 export { default as SelectHeader } from "./components/SelectHeader/SelectHeader";

@@ -10,9 +10,22 @@ import publicPaths from "./publicPaths";
 import privatePaths from "./privatePaths";
 import ProtectedRoute from "./ProtectedRoute";
 import { LoadingOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 
 const TheRoutes = () => {
+	//varaibles
 	const loading = <LoadingOutlined />;
+
+	//redux state
+	const auth = useSelector((state) => state.isAuthReducer);
+
+	//state
+
+	//methods and statements
+
+	//global logs
+	console.log("TheRoutes - auth", auth);
+
 	return (
 		<>
 			<HashRouter>
@@ -39,7 +52,7 @@ const TheRoutes = () => {
 										path={route.path}
 										exact={route.exact}
 										component={route.component}
-										isAuth={true}
+										isAuth={auth}
 									/>
 								);
 							})}
