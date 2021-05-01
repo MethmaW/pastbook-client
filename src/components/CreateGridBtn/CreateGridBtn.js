@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showOrder } from "../../actions/index";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Row, Col, Card, Button } from "antd";
-import { CheckOutlined, PlusOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
+import { Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import "./styles/createGridBtn.css";
 
 const CreateGridBtn = ({ text, photos, to }) => {
