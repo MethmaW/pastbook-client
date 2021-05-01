@@ -4,18 +4,6 @@ $imgWidthHeight: 300px;
 	justify-content: center;
 }
 
-#div1,
-#div2,
-#div3,
-#div4 {
-	float: left;
-	width: 100px;
-	height: 35px;
-	margin: 10px;
-	padding: 10px;
-	border: 1px solid black;
-}
-
 .cardParentDiv {
 	@include flexCenter();
 	position: relative;
