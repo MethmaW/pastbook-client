@@ -21,7 +21,7 @@ const Grid = () => {
 	showOrder.length === 9 &&
 		showOrder.map((pic, i) => {
 			vals = vals + 1;
-			finalSpaceCharacters.push({
+			return finalSpaceCharacters.push({
 				id: vals.toString(),
 				thumb: pic,
 			});
