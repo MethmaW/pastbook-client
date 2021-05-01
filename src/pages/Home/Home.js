@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Button } from "antd";
-import { CheckOutlined, PlusOutlined } from "@ant-design/icons";
 import * as ExternalAPIs from "../../utils/api/externalAPIs";
 import * as GlobalMethods from "../../utils/helper/globalMethods";
 import { SelectHeader, Spinner, CreateGridBtn } from "../../rootImports";
-import "./styles/pages.css";
+import { Row, Col, Card } from "antd";
+import { CheckOutlined } from "@ant-design/icons";
+import "./styles/home.css";
 
 const Home = () => {
 	//states
@@ -46,10 +46,19 @@ const Home = () => {
 			<div>
 				{showSpin && <Spinner text='Loading images' />}
 
-				<SelectHeader text='Select 9 photos from uploaded photos to create a photo grid!' />
+				<SelectHeader
+					text='Select 9 photos from uploaded photos to create a photo grid!'
+					size='4rem'
+					width='100%'
+					margin='5% 0% 3% 0%'
+				/>
 
 				{selectedPhotosArr.length >= 9 && (
-					<CreateGridBtn text='Create a photo grid' />
+					<CreateGridBtn
+						text='Create a photo grid'
+						to='/order-photos'
+						photos={selectedPhotosArr}
+					/>
 				)}
 
 				<Row>
@@ -62,9 +71,9 @@ const Home = () => {
 											{" "}
 											<img
 												id={photo.id}
-												onClick={() => handleImageClick(photo.id)}
+												onClick={() => handleImageClick(photo.picture)}
 												style={
-													selectedPhotosArr.includes(photo.id)
+													selectedPhotosArr.includes(photo.picture)
 														? { opacity: 0.5 }
 														: { opacity: 1 }
 												}
@@ -75,7 +84,7 @@ const Home = () => {
 												className='image'
 											/>
 										</Card>
-										{selectedPhotosArr.includes(photo.id) && (
+										{selectedPhotosArr.includes(photo.picture) && (
 											<div className='photoSelectedTick'>
 												<CheckOutlined className='tick' />
 											</div>
