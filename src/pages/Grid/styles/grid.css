@@ -1,3 +1,21 @@
+.alterGridDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0 4% 0 2%;
+  background-color: white;
+}
+
+.alterGridDiv Button {
+  font-size: 20px !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 3% 0;
+}
+
 .imageGrid {
   width: 300px;
   height: 300px;

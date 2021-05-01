@@ -4,18 +4,15 @@ import { SelectHeader } from "../../rootImports";
 import "./styles/grid.css";
 import { PlusOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
+import { showOrder } from "../../actions/index";
 import { withRouter, Link } from "react-router-dom";
 import * as InternalAPIs from "../../utils/api/internalAPIs";
-import Cookies from "js-cookie";
-import { showOrder, isAuth } from "../../actions/index";
 
 const Grid = () => {
 	//varaiables
 	const dispatch = useDispatch();
 	const finalSpaceCharacters = [];
 	let vals = 0;
-
-	let itd = [];
 
 	//redux state
 	const showSelectionOrder = useSelector((state) => state.showOrderReducer);
@@ -45,10 +42,7 @@ const Grid = () => {
 		dispatch(showOrder([]));
 
 		const id = localStorage.getItem("grid");
-
-		console.log("deleteGrid id", id);
 		InternalAPIs.deleteGrid(id).then((res) => {
-			console.log("deleteGrid res", res, id);
 			localStorage.removeItem("grid");
 		});
 	};
@@ -60,7 +54,7 @@ const Grid = () => {
 	return (
 		<>
 			<div>
-				<div className='createGridDiv'>
+				<div className='alterGridDiv'>
 					<Button
 						type='default'
 						shape='round'
@@ -75,7 +69,7 @@ const Grid = () => {
 					text='My new photo grid!'
 					size='3rem'
 					width='80%'
-					margin='5% 10% 8% 10%'
+					margin='1% 10% 4% 10%'
 				/>
 
 				<Row>
@@ -95,4 +89,3 @@ const Grid = () => {
 };
 
 export default withRouter(Grid);
-// export default Grid;
