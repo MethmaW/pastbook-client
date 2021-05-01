@@ -16,4 +16,16 @@ const saveGrid = async (payload) => {
 		});
 };
 
-export { saveGrid };
+const getGrid = async () => {
+	return await axios({
+		url: `http://localhost:4000/api/grid/get-photos`,
+		method: "GET",
+	})
+		.then((response) => response.data)
+
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+export { saveGrid, getGrid };

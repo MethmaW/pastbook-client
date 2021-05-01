@@ -6,13 +6,14 @@ import {
 	Switch,
 	BrowserRouter as Router,
 } from "react-router-dom";
+import * as InternalAPIs from "../utils/api/internalAPIs";
 import publicPaths from "./publicPaths";
 import privatePaths from "./privatePaths";
 import ProtectedRoute from "./ProtectedRoute";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
-const TheRoutes = () => {
+const AllRoutes = () => {
 	//varaibles
 	const loading = <LoadingOutlined />;
 
@@ -21,10 +22,15 @@ const TheRoutes = () => {
 
 	//state
 
+	//useEffect calls
+	// useEffect(() => {
+	// 	InternalAPIs.AllRoutes
+	// }, [input])
+
 	//methods and statements
 
 	//global logs
-	console.log("TheRoutes - auth", auth);
+	console.log("AllRoutes - auth", auth);
 
 	return (
 		<>
@@ -66,4 +72,4 @@ const TheRoutes = () => {
 	);
 };
 
-export default TheRoutes;
+export default AllRoutes;

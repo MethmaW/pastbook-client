@@ -1,10 +1,10 @@
 import React from "react";
-import TheRoutes from "./Router/TheRoutes";
+import AllRoutes from "./router/AllRoutes";
 
 const App = () => {
 	return (
 		<>
-			<TheRoutes />
+			<AllRoutes />
 		</>
 	);
 };
