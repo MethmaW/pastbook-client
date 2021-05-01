@@ -3,7 +3,7 @@ import axios from "axios";
 const saveGrid = async (payload) => {
 	console.log("payload", payload);
 	return await axios({
-		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/save`,
+		url: `http://localhost:4000/api/grid/save`,
 		method: "POST",
 		data: {
 			photos: payload,
