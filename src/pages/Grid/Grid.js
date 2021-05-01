@@ -4,7 +4,7 @@ import { SelectHeader } from "../../rootImports";
 import "./styles/grid.css";
 import { PlusOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { showOrder } from "../../actions/index";
+import { showOrder, userGrid } from "../../actions/index";
 import { withRouter, Link } from "react-router-dom";
 import * as InternalAPIs from "../../utils/api/internalAPIs";
 
@@ -16,11 +16,11 @@ const Grid = () => {
 
 	//redux state
 	const showSelectionOrder = useSelector((state) => state.showOrderReducer);
-	const userGrid = useSelector((state) => state.userGridReducer);
+	const userSelectedGrid = useSelector((state) => state.userGridReducer);
 
 	//methods and statements
-	if (userGrid.length === 9) {
-		userGrid.map((pic) => {
+	if (userSelectedGrid.length === 9) {
+		userSelectedGrid.map((pic) => {
 			return finalSpaceCharacters.push({
 				id: pic.id,
 				thumb: pic.thumb,
@@ -28,7 +28,7 @@ const Grid = () => {
 		});
 	}
 
-	if (userGrid.length !== 9 && showSelectionOrder.length === 9) {
+	if (userSelectedGrid.length !== 9 && showSelectionOrder.length === 9) {
 		showSelectionOrder.map((pic, i) => {
 			vals = vals + 1;
 			return finalSpaceCharacters.push({
@@ -40,6 +40,7 @@ const Grid = () => {
 
 	const handleCurrentGridDelete = () => {
 		dispatch(showOrder([]));
+		dispatch(userGrid([]));
 
 		const id = localStorage.getItem("grid");
 		InternalAPIs.deleteGrid(id).then((res) => {
@@ -49,7 +50,7 @@ const Grid = () => {
 
 	//global logs
 	console.log("Grid - showSelectionOrder", showSelectionOrder);
-	console.log("Grid - userGrid", userGrid);
+	console.log("Grid - userSelectedGrid", userSelectedGrid);
 
 	return (
 		<>
