@@ -1,0 +1,13 @@
+$imWidthHeight: 300px;
+
+.imageGrid {
+	width: $imWidthHeight;
+	height: $imWidthHeight;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.gridRow {
+	margin-bottom: 2% !important;
+}

@@ -1,0 +1,13 @@
+.imageGrid {
+  width: 300px;
+  height: 300px;
+}
+
+.imageGrid:hover {
+  cursor: pointer;
+}
+
+.gridRow {
+  margin-bottom: 2% !important;
+}
+/*# sourceMappingURL=grid.css.map */
