@@ -10,6 +10,8 @@ import "./styles/createGridBtn.css";
 const CreateGridBtn = ({ text, photos, to, save }) => {
 	const dispatch = useDispatch();
 
+	console.log("photos", photos);
+
 	const handleSelectionUpload = (save) => {
 		dispatch(isAuth(true));
 		dispatch(showOrder(photos));

@@ -34,8 +34,11 @@ const AllRoutes = () => {
 	//methods and statements
 	const getGridData = async () => {
 		await InternalAPIs.getGrid().then((res) => {
-			setSavedGrid(res.data);
-			dispatch(userGrid(res.data));
+			console.log("res", res);
+			if (res.data.length !== 0 && res.data[0].photos.length === 9) {
+				setSavedGrid(res.data[0].photos);
+				dispatch(userGrid(res.data[0].photos));
+			}
 		});
 	};
 

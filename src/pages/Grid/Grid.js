@@ -12,19 +12,31 @@ const Grid = () => {
 
 	//redux state
 	const showOrder = useSelector((state) => state.showOrderReducer);
+	const userGrid = useSelector((state) => state.userGridReducer);
 
 	//methods and statements
-	showOrder.length === 9 &&
+	if (userGrid.length === 9) {
+		userGrid.map((pic) => {
+			return finalSpaceCharacters.push({
+				id: pic.id,
+				thumb: pic.thumb,
+			});
+		});
+	}
+
+	if (userGrid.length !== 9 && showOrder.length === 9) {
 		showOrder.map((pic, i) => {
 			vals = vals + 1;
 			return finalSpaceCharacters.push({
-				id: vals.toString(),
-				thumb: pic,
+				id: pic.id,
+				thumb: pic.thumb,
 			});
 		});
+	}
 
 	//global logs
 	console.log("Grid - showOrder", showOrder);
+	console.log("Grid - userGrid", userGrid);
 
 	return (
 		<>
@@ -37,7 +49,7 @@ const Grid = () => {
 				/>
 
 				<Row>
-					{showOrder.map(({ thumb }, index) => {
+					{finalSpaceCharacters.map(({ thumb }, index) => {
 						return (
 							<Col className='gridRow' xs={20} sm={16} md={12} lg={8} xl={8}>
 								<div className='cardParentDiv'>

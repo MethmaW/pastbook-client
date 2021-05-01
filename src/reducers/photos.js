@@ -7,7 +7,7 @@ const showOrderReducer = (state = [], action) => {
 	}
 };
 
-const userGrid = (state = [], action) => {
+const userGridReducer = (state = [], action) => {
 	switch (action.type) {
 		case "USER_GRID":
 			return (state = action.payload);
@@ -16,4 +16,4 @@ const userGrid = (state = [], action) => {
 	}
 };
 
-export { showOrderReducer, userGrid };
+export { showOrderReducer, userGridReducer };
