@@ -7,4 +7,4 @@ const isAuthReducer = (state = false, action) => {
 	}
 };
 
-export default isAuthReducer;
+export { isAuthReducer };

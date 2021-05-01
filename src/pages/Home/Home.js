@@ -16,10 +16,14 @@ const Home = () => {
 
 	//useEffect calls
 	useEffect(() => {
-		ExternalAPIs.getUploadedPhotos().then((res) => setUploadedPhotos(res));
+		getPhotoData();
 	}, []);
 
 	//methods and statements
+	const getPhotoData = async () => {
+		await ExternalAPIs.getUploadedPhotos().then((res) => setUploadedPhotos(res));
+	};
+
 	const handleImageClick = (id) => {
 		console.log("Home - clickedPhotoId", id);
 

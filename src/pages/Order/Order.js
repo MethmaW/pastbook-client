@@ -17,8 +17,6 @@ const Order = () => {
 	//states
 	const [characters, updateCharacters] = useState(finalSpaceCharacters);
 
-	//useEffect calls
-
 	//methods and statements
 	showOrder.map((pic, i) => {
 		vals = vals + 1;

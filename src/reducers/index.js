@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import showOrderReducer from "./showOrderReducer";
-import isAuthReducer from "./isAuth";
+import { showOrderReducer, userGrid } from "./photos";
+import { isAuthReducer } from "./isAuth";
 
 const rootReducer = combineReducers({
-	showOrderReducer,
 	isAuthReducer,
+	showOrderReducer,
+	userGrid,
 });
 
 export default rootReducer;

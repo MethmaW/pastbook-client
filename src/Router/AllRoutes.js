@@ -6,15 +6,17 @@ import {
 	Switch,
 	BrowserRouter as Router,
 } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userGrid } from "../actions/index";
 import * as InternalAPIs from "../utils/api/internalAPIs";
 import publicPaths from "./publicPaths";
 import privatePaths from "./privatePaths";
 import ProtectedRoute from "./ProtectedRoute";
 import { LoadingOutlined } from "@ant-design/icons";
-import { useSelector } from "react-redux";
 
 const AllRoutes = () => {
 	//varaibles
+	const dispatch = useDispatch();
 	const loading = <LoadingOutlined />;
 	let userAuth = false;
 
@@ -26,10 +28,17 @@ const AllRoutes = () => {
 
 	//useEffect calls
 	useEffect(() => {
-		InternalAPIs.getGrid().then((res) => setSavedGrid(res.data));
+		getGridData();
 	}, []);
 
 	//methods and statements
+	const getGridData = async () => {
+		await InternalAPIs.getGrid().then((res) => {
+			setSavedGrid(res.data);
+			dispatch(userGrid(res.data));
+		});
+	};
+
 	userAuth = savedGrid.length > 0 || auth;
 
 	//global logs

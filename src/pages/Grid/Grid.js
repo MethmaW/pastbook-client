@@ -13,10 +13,6 @@ const Grid = () => {
 	//redux state
 	const showOrder = useSelector((state) => state.showOrderReducer);
 
-	//states
-
-	//useEffect calls
-
 	//methods and statements
 	showOrder.length === 9 &&
 		showOrder.map((pic, i) => {

@@ -10,3 +10,10 @@ export const showOrder = (photos) => {
 		payload: photos,
 	};
 };
+
+export const userGrid = (photos) => {
+	return {
+		type: "USER_GRID",
+		payload: photos,
+	};
+};
