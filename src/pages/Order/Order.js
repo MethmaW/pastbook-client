@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import * as ExternalAPIs from "../../utils/api/externalAPIs";
 import { SelectHeader, CreateGridBtn } from "../../rootImports";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
@@ -18,7 +17,6 @@ const Order = () => {
 	const [characters, updateCharacters] = useState(finalSpaceCharacters);
 
 	//useEffect calls
-	useEffect(() => {}, []);
 
 	//methods and statements
 	if (showOrder.length !== 9) {
