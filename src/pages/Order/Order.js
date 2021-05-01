@@ -96,6 +96,7 @@ const Order = () => {
 					text='Create a photo grid'
 					to='/photo-grid'
 					photos={characters}
+					save={true}
 				/>
 			</div>
 		</>

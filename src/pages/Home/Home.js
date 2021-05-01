@@ -58,6 +58,7 @@ const Home = () => {
 						text='Create a photo grid'
 						to='/order-photos'
 						photos={selectedPhotosArr}
+						save={false}
 					/>
 				)}
 
