@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import "./styles/createGridBtn.css";
+import Cookies from "js-cookie";
 
 const CreateGridBtn = ({ text, photos, to, save }) => {
 	const dispatch = useDispatch();
@@ -17,7 +18,10 @@ const CreateGridBtn = ({ text, photos, to, save }) => {
 		dispatch(showOrder(photos));
 
 		if (save) {
-			InternalAPIs.saveGrid(photos).then((res) => console.log(res));
+			InternalAPIs.saveGrid(photos).then(
+				(res) => localStorage.setItem("grid", res.data._id)
+				// Cookies.set("grid", res.data._id, { path: "/photo-grid" })
+			);
 		}
 	};
 

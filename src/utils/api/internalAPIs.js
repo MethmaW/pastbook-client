@@ -18,7 +18,7 @@ const saveGrid = async (payload) => {
 
 const getGrid = async () => {
 	return await axios({
-		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/get-photos`,
+		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/get`,
 
 		method: "GET",
 	})
@@ -29,4 +29,20 @@ const getGrid = async () => {
 		});
 };
 
-export { saveGrid, getGrid };
+const deleteGrid = async (id) => {
+	return await axios({
+		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/delete`,
+
+		method: "POST",
+		data: {
+			id: id,
+		},
+	})
+		.then((response) => response.data)
+
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+export { saveGrid, getGrid, deleteGrid };
