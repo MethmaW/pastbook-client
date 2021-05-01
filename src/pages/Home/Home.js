@@ -3,13 +3,10 @@ import * as ExternalAPIs from "../../utils/api/externalAPIs";
 import * as GlobalMethods from "../../utils/helper/globalMethods";
 import { SelectHeader, Spinner, CreateGridBtn } from "../../rootImports";
 import { Row, Col, Card } from "antd";
-import { CheckOutlined } from "@ant-design/icons";
+import { BorderInnerOutlined, CheckOutlined } from "@ant-design/icons";
 import "./styles/home.css";
-import { PlusOutlined, BorderInnerOutlined } from "@ant-design/icons";
 
 const Home = () => {
-	//varaiables
-
 	//states
 	const [uploadedPhotos, setUploadedPhotos] = useState([]);
 	const [selectedPhotosArr, setSelectedPhotosArr] = useState([]);

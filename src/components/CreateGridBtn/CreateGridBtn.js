@@ -4,23 +4,20 @@ import * as InternalAPIs from "../../utils/api/internalAPIs";
 import { showOrder, isAuth } from "../../actions/index";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-
 import "./styles/createGridBtn.css";
-import Cookies from "js-cookie";
 
 const CreateGridBtn = ({ text, photos, to, save, icon }) => {
+	//varaibles
 	const dispatch = useDispatch();
 
-	console.log("photos", photos);
-
+	//methods and statements
 	const handleSelectionUpload = (save) => {
 		dispatch(isAuth(true));
 		dispatch(showOrder(photos));
 
 		if (save) {
-			InternalAPIs.saveGrid(photos).then(
-				(res) => localStorage.setItem("grid", res.data._id)
-				// Cookies.set("grid", res.data._id, { path: "/photo-grid" })
+			InternalAPIs.saveGrid(photos).then((res) =>
+				localStorage.setItem("grid", res.data._id)
 			);
 		}
 	};

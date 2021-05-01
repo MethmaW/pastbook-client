@@ -4,8 +4,8 @@ import { withRouter } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
 import { Row, Col } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import "./styles/order.css";
-import { PlusOutlined, BorderInnerOutlined } from "@ant-design/icons";
 
 const Order = () => {
 	//varaiables

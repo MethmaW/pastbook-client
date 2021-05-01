@@ -1,12 +1,12 @@
 import React from "react";
-import { Row, Col, Button } from "antd";
-import { SelectHeader } from "../../rootImports";
-import "./styles/grid.css";
-import { PlusOutlined, EditOutlined } from "@ant-design/icons";
+import { withRouter, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { showOrder, userGrid } from "../../actions/index";
-import { withRouter, Link } from "react-router-dom";
+import { SelectHeader } from "../../rootImports";
 import * as InternalAPIs from "../../utils/api/internalAPIs";
+import { Row, Col, Button } from "antd";
+import { EditOutlined } from "@ant-design/icons";
+import "./styles/grid.css";
 
 const Grid = () => {
 	//varaiables
