@@ -1,10 +1,15 @@
 import React from "react";
 import "./styles/selectedHeader.css";
 
-const SelectHeader = ({ text }) => {
+const SelectHeader = ({ text, size, width, margin }) => {
 	return (
 		<div>
-			<h1 className='selectHeader'>{text}</h1>
+			<h1
+				className='selectHeader'
+				style={{ fontSize: size, width: width, margin: margin }}
+			>
+				{text}
+			</h1>
 		</div>
 	);
 };
