@@ -20,9 +20,6 @@ const Order = () => {
 	//useEffect calls
 
 	//methods and statements
-	if (showOrder.length !== 9) {
-		return alert("Error occured please reload the page");
-	}
 	showOrder.map((pic, i) => {
 		vals = vals + 1;
 		return finalSpaceCharacters.push({
@@ -104,4 +101,3 @@ const Order = () => {
 };
 
 export default withRouter(Order);
-// export default Order;

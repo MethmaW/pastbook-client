@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import {
 	HashRouter,
 	Redirect,
@@ -16,27 +16,31 @@ import { useSelector } from "react-redux";
 const AllRoutes = () => {
 	//varaibles
 	const loading = <LoadingOutlined />;
+	let userAuth = false;
 
 	//redux state
 	const auth = useSelector((state) => state.isAuthReducer);
 
 	//state
+	const [savedGrid, setSavedGrid] = useState([]);
 
 	//useEffect calls
-	// useEffect(() => {
-	// 	InternalAPIs.AllRoutes
-	// }, [input])
+	useEffect(() => {
+		InternalAPIs.getGrid().then((res) => setSavedGrid(res.data));
+	}, []);
 
 	//methods and statements
+	userAuth = savedGrid.length > 0 || auth;
 
 	//global logs
-	console.log("AllRoutes - auth", auth);
+	console.log("AllRoutes - auth", savedGrid);
 
 	return (
 		<>
 			<HashRouter>
 				<Suspense fallback={loading}>
 					<Router>
+						{savedGrid.length > 0 && <Redirect from='/' to='/photo-grid' />}
 						<Switch>
 							{publicPaths.map((route, i) => {
 								return (
@@ -55,10 +59,11 @@ const AllRoutes = () => {
 							{privatePaths.map((route, i) => {
 								return (
 									<ProtectedRoute
+										key={i}
 										path={route.path}
 										exact={route.exact}
 										component={route.component}
-										isAuth={auth}
+										isAuth={userAuth ? true : false}
 									/>
 								);
 							})}
