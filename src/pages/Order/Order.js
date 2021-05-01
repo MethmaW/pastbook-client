@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
 import { Row, Col } from "antd";
 import "./styles/order.css";
+import { PlusOutlined, BorderInnerOutlined } from "@ant-design/icons";
 
 const Order = () => {
 	//varaiables
@@ -47,7 +48,7 @@ const Order = () => {
 					text='Drag and drop photos to arrage the order of the slected photos'
 					size='3rem'
 					width='80%'
-					margin='10% 10% 5% 10%'
+					margin='5% 10% 5% 10%'
 				/>
 
 				<DragDropContext onDragEnd={handleOnDragEnd}>
@@ -88,10 +89,11 @@ const Order = () => {
 					</Droppable>
 				</DragDropContext>
 				<CreateGridBtn
-					text='Create a photo grid'
+					text='Create the photo grid'
 					to='/photo-grid'
 					photos={characters}
 					save={true}
+					icon={<PlusOutlined />}
 				/>
 			</div>
 		</>

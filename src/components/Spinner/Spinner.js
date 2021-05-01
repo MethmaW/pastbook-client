@@ -4,7 +4,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import "./styles/spinner.css";
 
 const Spinner = ({ text }) => {
-	const antIcon = <LoadingOutlined style={{ fontSize: 30 }} spin />;
+	const antIcon = <LoadingOutlined style={{ fontSize: 25 }} spin />;
 	return (
 		<div className='spinner'>
 			<p>

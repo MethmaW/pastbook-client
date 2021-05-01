@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Button } from "antd";
 import { SelectHeader } from "../../rootImports";
 import "./styles/grid.css";
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined, EditOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { showOrder, userGrid } from "../../actions/index";
 import { withRouter, Link } from "react-router-dom";
@@ -59,18 +59,18 @@ const Grid = () => {
 					<Button
 						type='default'
 						shape='round'
-						icon={<PlusOutlined />}
+						icon={<EditOutlined />}
 						size='large'
 						onClick={() => handleCurrentGridDelete()}
 					>
-						<Link to='/home'>"Change the grid"</Link>
+						<Link to='/home'> &nbsp; Change the grid</Link>
 					</Button>
 				</div>
 				<SelectHeader
-					text='My new photo grid!'
+					text='Photo Grid'
 					size='3rem'
 					width='80%'
-					margin='1% 10% 4% 10%'
+					margin='0 10% 4% 10%'
 				/>
 
 				<Row>

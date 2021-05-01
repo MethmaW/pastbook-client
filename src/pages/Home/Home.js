@@ -5,6 +5,7 @@ import { SelectHeader, Spinner, CreateGridBtn } from "../../rootImports";
 import { Row, Col, Card } from "antd";
 import { CheckOutlined } from "@ant-design/icons";
 import "./styles/home.css";
+import { PlusOutlined, BorderInnerOutlined } from "@ant-design/icons";
 
 const Home = () => {
 	//varaiables
@@ -30,10 +31,7 @@ const Home = () => {
 		if (selectedPhotosArr.length >= 9) {
 			return selectedPhotosArr.includes(id)
 				? setSelectedPhotosArr(selectedPhotosArr.filter((item) => item !== id))
-				: GlobalMethods.showNotification(
-						"warning",
-						"Please select no more than 9 photos"
-				  );
+				: GlobalMethods.showNotification("warning", "Please select 9 photos only");
 		}
 
 		selectedPhotosArr.includes(id)
@@ -51,7 +49,7 @@ const Home = () => {
 				{showSpin && <Spinner text='Loading images' />}
 
 				<SelectHeader
-					text='Select 9 photos from uploaded photos to create a photo grid!'
+					text='Select 9 photos from uploaded photos to create the photo grid!'
 					size='4rem'
 					width='100%'
 					margin='5% 0% 3% 0%'
@@ -59,10 +57,11 @@ const Home = () => {
 
 				{selectedPhotosArr.length >= 9 && (
 					<CreateGridBtn
-						text='Create a photo grid'
+						text='Order the selection'
 						to='/order-photos'
 						photos={selectedPhotosArr}
 						save={false}
+						icon={<BorderInnerOutlined />}
 					/>
 				)}
 
