@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import { SelectHeader } from "../../rootImports";
 import "./styles/grid.css";
 import { useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const Grid = () => {
 	//varaiables
@@ -55,4 +56,4 @@ const Grid = () => {
 	);
 };
 
-export default Grid;
+export default withRouter(Grid);

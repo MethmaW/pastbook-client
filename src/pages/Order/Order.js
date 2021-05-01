@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SelectHeader, CreateGridBtn } from "../../rootImports";
+import { withRouter } from "react-router-dom";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
 import { Row, Col } from "antd";
@@ -101,4 +102,4 @@ const Order = () => {
 	);
 };
 
-export default Order;
+export default withRouter(Order);
