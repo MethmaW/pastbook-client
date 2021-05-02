@@ -33,11 +33,15 @@ const AllRoutes = () => {
 
 	//methods and statements
 	const getGridData = async () => {
+		const id = localStorage.getItem("grid");
 		await InternalAPIs.getGrid().then((res) => {
-			console.log("res", res);
-			if (res.data.length !== 0 && res.data[0].photos.length === 9) {
-				setSavedGrid(res.data[0].photos);
-				dispatch(userGrid(res.data[0].photos));
+			if (res.data.length !== 0) {
+				res.data.map((p) => {
+					if ((id !== null) & (p._id === id)) {
+						setSavedGrid(p.photos);
+						dispatch(userGrid(p.photos));
+					}
+				});
 			}
 		});
 	};
