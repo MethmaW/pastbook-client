@@ -2,12 +2,6 @@
 
 An application where users can select and order photos to create a photo grid.
 
-## Project Screen Shot(s)
-
-[ ]
-
-[ ]
-
 ## Installation and Setup Instructions
 
 Clone this repository. You will need `node` and `npm` installed globally on your machine.
@@ -24,13 +18,13 @@ Clone this repository. You will need `node` and `npm` installed globally on your
 
 `localhost:3000/ideas`
 
-## Generating jsdoc
+## Generating jsdoc - (not required to run the application)
 
 1. To run jsdoc
 
 `npm run doc`
 
-## Viewing jsdoc documentation locally
+## Viewing jsdoc documentation locally - (not required to run the application)
 
 1. Open the `docs` folder in the root directory
 2. Right click on `index.html` file
