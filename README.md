@@ -14,9 +14,9 @@ Clone this repository. You will need `node` and `npm` installed globally on your
 
 `npm start`
 
-3. To Visit App:
+3. Visit the App:
 
-`localhost:3000/ideas`
+`localhost:3000/home`
 
 ## Generating jsdoc - (not required to run the application)
 
