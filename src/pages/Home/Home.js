@@ -71,6 +71,7 @@ const Home = () => {
 										<Card bordered={false}>
 											{" "}
 											<img
+												key={photo.id}
 												id={photo.id}
 												onClick={() => handleImageClick(photo.picture)}
 												style={

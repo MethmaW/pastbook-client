@@ -76,9 +76,22 @@ const Grid = () => {
 				<Row>
 					{finalSpaceCharacters.map(({ thumb }, index) => {
 						return (
-							<Col className='gridRow' xs={20} sm={16} md={12} lg={8} xl={8}>
+							<Col
+								className='gridRow'
+								xs={20}
+								sm={16}
+								md={12}
+								lg={8}
+								xl={8}
+								key={index}
+							>
 								<div className='cardParentDiv'>
-									<img src={thumb} alt={`${index} Thumb`} className='imageGrid' />
+									<img
+										src={thumb}
+										alt={`${index} Thumb`}
+										className='imageGrid'
+										key={index}
+									/>
 								</div>
 							</Col>
 						);
