@@ -31,6 +31,6 @@ Clone this repository. You will need `node` and `npm` installed globally on your
 3. Select `copy path`
 4. Go to the browser and past the path you copied to see the documentation
 
-#### Tools and Technologies:
+## Tools and Technologies:
 
 This project is mainly built on `create-react-app` , `Redux` and `react-router-dom`.
