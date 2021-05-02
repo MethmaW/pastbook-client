@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import * as InternalAPIs from "../../utils/api/internalAPIs";
 import { showOrder, isAuth } from "../../actions/index";
 import { Link } from "react-router-dom";
+import * as GlobalMethods from "../../utils/helper/globalMethods";
 import { Button } from "antd";
 import "./styles/createGridBtn.css";
 
@@ -16,9 +17,10 @@ const CreateGridBtn = ({ text, photos, to, save, icon }) => {
 		dispatch(showOrder(photos));
 
 		if (save) {
-			InternalAPIs.saveGrid(photos).then((res) =>
-				localStorage.setItem("grid", res.data._id)
-			);
+			InternalAPIs.saveGrid(photos).then((res) => {
+				localStorage.setItem("grid", res.data._id);
+				GlobalMethods.showNotification("success", "Grid created successfully");
+			});
 		}
 	};
 
