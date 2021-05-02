@@ -1,0 +1,29 @@
+$imgWidthHeight: 300px;
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+}
+
+.cardParentDiv {
+	@include flexCenter();
+	position: relative;
+}
+
+.photoSelectedTick {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.tick {
+	font-size: 4rem;
+	color: #191c3c;
+}
+
+.image {
+	width: $imgWidthHeight;
+	height: $imgWidthHeight;
+	&:hover {
+		cursor: pointer;
+	}
+}

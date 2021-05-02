@@ -1,0 +1,12 @@
+.spinner {
+  margin: 1% 2% 1% 0;
+}
+
+.spinner p {
+  text-align: right;
+}
+
+.spinner p span {
+  font-size: 20px;
+}
+/*# sourceMappingURL=spinner.css.map */

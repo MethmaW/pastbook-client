@@ -1,0 +1,30 @@
+$imWidthHeight: 300px;
+
+@mixin flexRight {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.alterGridDiv {
+	@include flexRight();
+	margin: 0 4% 0 2%;
+	background-color: white;
+	Button {
+		font-size: 20px !important;
+		height: auto !important;
+		width: auto !important;
+		margin: 3% 0;
+	}
+}
+
+.imageGrid {
+	width: $imWidthHeight;
+	height: $imWidthHeight;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.gridRow {
+	margin-bottom: 2% !important;
+}

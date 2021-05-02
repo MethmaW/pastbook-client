@@ -1,0 +1,35 @@
+$dropWidthHeight: 250px;
+$imWidthHeight: 110px;
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+}
+
+.cardParentDiv {
+	@include flexCenter();
+	position: relative;
+}
+
+.imageSelect {
+	width: $imWidthHeight;
+	height: $imWidthHeight;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.diva {
+	width: 80% !important;
+}
+
+.characters {
+	justify-content: center;
+	margin-bottom: 3%;
+}
+
+.picNum {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 0;
+}

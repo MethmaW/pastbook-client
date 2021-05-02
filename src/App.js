@@ -1,11 +1,12 @@
 import React from "react";
-import "./App.css";
-
-//import components
-import { Home } from "./rootImports";
+import AllRoutes from "./router/AllRoutes";
 
 const App = () => {
-	return <Home />;
+	return (
+		<>
+			<AllRoutes />
+		</>
+	);
 };
 
 export default App;
