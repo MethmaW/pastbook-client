@@ -1,5 +1,10 @@
 import { Grid, Order } from "../rootImports";
 
+/**
+ * All the protected routes
+ * @const privatePaths
+ */
+
 const privatePaths = [
 	{
 		path: "/photo-grid",

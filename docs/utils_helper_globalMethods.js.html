@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: utils/helper/globalMethods.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,34 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: utils/helper/globalMethods.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { notification } from "antd";
+/**
+ * Notification handling function
+ * @function showNotification
+ * @param {String} type
+ * @param {String} msg
+ * @param {String} desc
+ */
+const showNotification = (type, msg, desc = null) => {
+	notification[type]({
+		message: msg,
+		description: desc,
+	});
+};
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export { showNotification };
+</code></pre>
+        </article>
+    </section>
 
 
 

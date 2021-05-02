@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: utils/api/externalAPIs.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,37 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: utils/api/externalAPIs.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from "axios";
+/**
+ * GET request to fetch uploaded Photos
+ * @function getUploadedPhotos
+ * @returns {Array}
+ */
+const getUploadedPhotos = async () => {
+	return await axios({
+		url:
+			"https://dev-pb-apps.s3-eu-west-1.amazonaws.com/collection/CHhASmTpKjaHyAsSaauThRqMMjWanYkQ.json",
+		method: "GET",
+	})
+		.then((response) => response.data.entries)
+		.catch((error) => {
+			throw error;
+		});
+};
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export { getUploadedPhotos };
+</code></pre>
+        </article>
+    </section>
 
 
 

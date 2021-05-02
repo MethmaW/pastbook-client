@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: utils/api/internalAPIs.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,82 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: utils/api/internalAPIs.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from "axios";
 
+/**
+ * Axios call to save the grid selected by the user
+ * @function saveGrid
+ * @param {Array} payload
+ * @returns {Object}
+ */
+const saveGrid = async (payload) => {
+	console.log("payload", payload);
+	return await axios({
+		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/save`,
+		method: "POST",
+		data: {
+			photos: payload,
+		},
+	})
+		.then((response) => response.data)
 
-    <h3> </h3>
+		.catch((err) => {
+			console.log(err);
+		});
+};
 
+/**
+ * Axios call to get the selected grid from the database
+ * @function getGrid
+ * @returns {Object}
+ */
+const getGrid = async () => {
+	return await axios({
+		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/get`,
 
+		method: "GET",
+	})
+		.then((response) => response.data)
 
+		.catch((err) => {
+			console.log(err);
+		});
+};
 
+/**
+ * Axios call to delete the selected grid from the database
+ * @param {String} id
+ * @returns {Object}
+ */
+const deleteGrid = async (id) => {
+	return await axios({
+		url: `${process.env.REACT_APP_BACKEND_URL}/api/grid/delete`,
 
+		method: "POST",
+		data: {
+			id: id,
+		},
+	})
+		.then((response) => response.data)
 
+		.catch((err) => {
+			console.log(err);
+		});
+};
 
-
-
-
-    
-
-
-
-
-
+export { saveGrid, getGrid, deleteGrid };
+</code></pre>
+        </article>
+    </section>
 
 
 

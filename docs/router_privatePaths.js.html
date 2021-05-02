@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: router/privatePaths.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,41 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: router/privatePaths.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Grid, Order } from "../rootImports";
 
+/**
+ * All the protected routes
+ * @const privatePaths
+ */
 
-    <h3> </h3>
+const privatePaths = [
+	{
+		path: "/photo-grid",
+		exact: true,
+		name: "Grid",
+		component: Grid,
+	},
+	{
+		path: "/order-photos",
+		exact: true,
+		name: "Order",
+		component: Order,
+	},
+];
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default privatePaths;
+</code></pre>
+        </article>
+    </section>
 
 
 

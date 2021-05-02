@@ -1,5 +1,10 @@
 import { Home } from "../rootImports";
 
+/**
+ * All the public routes
+ * @const publicPaths
+ */
+
 const publicPaths = [
 	{
 		path: "/home",

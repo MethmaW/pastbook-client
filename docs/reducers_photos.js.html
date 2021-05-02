@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: reducers/photos.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: reducers/photos.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Redux reducer to show the photo selection
+ * @function showOrderReducer
+ */
+const showOrderReducer = (state = [], action) => {
+	switch (action.type) {
+		case "SHOW_ORDER":
+			return (state = action.payload);
+		default:
+			return state;
+	}
+};
 
+/**
+ * Redux reducer to show photos in the database
+ * @function showOrderReducer
+ */
+const userGridReducer = (state = [], action) => {
+	switch (action.type) {
+		case "USER_GRID":
+			return (state = action.payload);
+		default:
+			return state;
+	}
+};
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export { showOrderReducer, userGridReducer };
+</code></pre>
+        </article>
+    </section>
 
 
 

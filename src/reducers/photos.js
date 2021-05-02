@@ -1,3 +1,7 @@
+/**
+ * Redux reducer to show the photo selection
+ * @function showOrderReducer
+ */
 const showOrderReducer = (state = [], action) => {
 	switch (action.type) {
 		case "SHOW_ORDER":
@@ -7,6 +11,10 @@ const showOrderReducer = (state = [], action) => {
 	}
 };
 
+/**
+ * Redux reducer to show photos in the database
+ * @function showOrderReducer
+ */
 const userGridReducer = (state = [], action) => {
 	switch (action.type) {
 		case "USER_GRID":
