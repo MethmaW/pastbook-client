@@ -1,3 +1,5 @@
+## Project Summary
+
 An application where users can select and order photos to create a photo grid.
 
 ## Project Screen Shot(s)
