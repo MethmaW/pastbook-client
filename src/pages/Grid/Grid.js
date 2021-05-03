@@ -12,7 +12,6 @@ const Grid = () => {
 	//varaiables
 	const dispatch = useDispatch();
 	const finalSpaceCharacters = [];
-	let vals = 0;
 
 	//redux state
 	const showSelectionOrder = useSelector((state) => state.showOrderReducer);
@@ -20,22 +19,15 @@ const Grid = () => {
 
 	//methods and statements
 	if (userSelectedGrid.length === 9) {
-		userSelectedGrid.map((pic) => {
-			return finalSpaceCharacters.push({
-				id: pic.id,
-				thumb: pic.thumb,
-			});
+		userSelectedGrid.forEach((pic) => {
+			finalSpaceCharacters.push({ id: pic.id, thumb: pic.thumb });
 		});
 	}
 
 	if (userSelectedGrid.length !== 9 && showSelectionOrder.length === 9) {
-		showSelectionOrder.map((pic, i) => {
-			vals = vals + 1;
-			return finalSpaceCharacters.push({
-				id: pic.id,
-				thumb: pic.thumb,
-			});
-		});
+		showSelectionOrder.forEach((pic, i) =>
+			finalSpaceCharacters.push({ id: pic.id, thumb: pic.thumb })
+		);
 	}
 
 	const handleCurrentGridDelete = () => {

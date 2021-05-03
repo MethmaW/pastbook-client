@@ -19,12 +19,9 @@ const Order = () => {
 	const [characters, updateCharacters] = useState(finalSpaceCharacters);
 
 	//methods and statements
-	showOrder.map((pic, i) => {
+	showOrder.forEach((pic, i) => {
 		vals = vals + 1;
-		return finalSpaceCharacters.push({
-			id: vals.toString(),
-			thumb: pic,
-		});
+		finalSpaceCharacters.push({ id: vals.toString(), thumb: pic });
 	});
 
 	const handleOnDragEnd = (result) => {
